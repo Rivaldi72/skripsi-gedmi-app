@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/student-page': (context) => StudentPage(),
         '/profil': (context) => const Profil(),
         '/visi-page': (context) => const Visi(),
-        '/headmaster-page': (context) => HeadMasterPage(),
+        '/headmaster-page': (context) => const HeadMasterPage(),
         '/school-identity': (context) => const SchoolIdentityPage(),
         '/contact-page': (context) => const ContactPage(),
         '/fasility-page': (context) => const FasilityPage(),
@@ -54,9 +54,9 @@ class MyApp extends StatelessWidget {
         '/kelas-page': (context) => const KelasPage(),
         '/detail-student-page2': (context) => DetailStudent2(),
         '/detail-student-page3': (context) => DetailStudent3(),
-        '/testscreen': (context) => TestScreen(),
-        '/identitas-teacher': (context) => IdentitasTeacher(),
-        '/identitas-student': (context) => IdentitasStudent(),
+        '/testscreen': (context) => const TestScreen(),
+        '/identitas-teacher': (context) => const IdentitasTeacher(),
+        '/identitas-student': (context) => const IdentitasStudent(),
       },
     );
   }
