@@ -8,6 +8,7 @@ class IdentitasStudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(this.isi + 'sdasdasd');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
