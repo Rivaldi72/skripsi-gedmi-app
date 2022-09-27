@@ -3,7 +3,8 @@ import 'package:skripsi/shared/theme.dart';
 import '../widget/card_identitas_student.dart';
 
 class IdentitasStudent extends StatelessWidget {
-  const IdentitasStudent({Key? key}) : super(key: key);
+  final String isi;
+  const IdentitasStudent({Key? key, required this.isi}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,35 +17,43 @@ class IdentitasStudent extends StatelessWidget {
         children: [
           CardIdentitasStudent(
             judul: "NIS",
-            isi: "Masukkan NIS",
+            label: "Masukkan NIS",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Nama",
-            isi: "Masukkan Nama",
+            label: "Masukkan Nama",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Tempat Lahir",
-            isi: "Masukkan Tempat Lahir",
+            label: "Masukkan Tempat Lahir",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Tanggal Lahir",
-            isi: "Masukkan Tanggal Lahir",
+            label: "Masukkan Tanggal Lahir",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Tahun Masuk",
-            isi: "Masukkan Tahun Masuk",
+            label: "Masukkan Tahun Masuk",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Jenis Kelamin",
-            isi: "Masukkan Jenis Kelamin",
+            label: "Masukkan Jenis Kelamin",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Agama",
-            isi: "Masukkan Agama",
+            label: "Masukkan Agama",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
           CardIdentitasStudent(
             judul: "Alamat",
-            isi: "Masukkan Alamat",
+            label: "Masukkan Alamat",
+            isi: isi == '1' ? "Data Siswa 1" : "Data Siswa 2",
           ),
         ],
       ),

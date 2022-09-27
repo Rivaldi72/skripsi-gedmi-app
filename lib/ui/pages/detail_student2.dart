@@ -151,6 +151,7 @@ class DetailStudent2 extends StatelessWidget {
                         menuSiswa[index]['title'] ?? 'assets/images/siswi.png',
                     nis: menuSiswa[index]['nis'] ?? 'assets/images/siswi.png',
                     action: menuSiswa[index]['action'] ?? '/identitas-student',
+                    id_siswa: menuSiswa[index]['id_siswa'] ?? '1',
                   );
                 }),
           ),
