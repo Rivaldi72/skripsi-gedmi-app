@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:skripsi/shared/theme.dart';
 
 class CardMenuSiswa extends StatelessWidget {
-  final String image, title, nis, action, id_siswa;
+  final String image, title, nis, action, idSiswa;
   const CardMenuSiswa({
     Key? key,
-    required this.id_siswa,
+    required this.idSiswa,
     required this.image,
     required this.title,
     required this.nis,
@@ -19,7 +19,7 @@ class CardMenuSiswa extends StatelessWidget {
         Navigator.pushNamed(
           context,
           action,
-          arguments: {'id_siswa': id_siswa},
+          arguments: {'idSiswa': idSiswa},
         );
       },
       child: Container(

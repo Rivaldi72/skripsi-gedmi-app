@@ -11,14 +11,14 @@ class DetailStudent extends StatelessWidget {
       "title": "Adira Wibowo",
       "nis": "21288090",
       "action": "/identitas-student",
-      "id_siswa": "1",
+      "idSiswa": "1",
     },
     {
       "image": "assets/images/siswi.png",
       "title": "Agustina Risentri Salme H.",
       "nis": "21288091",
       "action": "/identitas-student",
-      "id_siswa": "2",
+      "idSiswa": "2",
     },
     {
       "image": "assets/images/siswa.png",
@@ -134,7 +134,7 @@ class DetailStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kelas VII"),
+        title: const Text("Kelas VII"),
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),
@@ -153,7 +153,7 @@ class DetailStudent extends StatelessWidget {
                         menuSiswa[index]['title'] ?? 'assets/images/siswi.png',
                     nis: menuSiswa[index]['nis'] ?? 'assets/images/siswi.png',
                     action: menuSiswa[index]['action'] ?? '/identitas-student',
-                    id_siswa: menuSiswa[index]['id_siswa'] ?? '1',
+                    idSiswa: menuSiswa[index]['idSiswa'] ?? '1',
                   );
                 }),
           ),
