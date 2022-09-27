@@ -4,7 +4,7 @@ import '../widget/card_identitas_student.dart';
 
 class IdentitasStudent extends StatelessWidget {
   final String isi;
-  const IdentitasStudent({Key? key, required this.isi}) : super(key: key);
+  const IdentitasStudent({Key? key, this.isi = ''}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
