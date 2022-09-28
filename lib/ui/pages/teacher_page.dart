@@ -22,8 +22,8 @@ class TeacherPage extends StatelessWidget {
       "action": "/kelas-page"
     },
     {
-      "image": "assets/images/informasi.png",
-      "title": "Informasi",
+      "image": "assets/images/gambar.png",
+      "title": "Galeri",
       "action": "/informasi-page"
     },
     {
@@ -33,10 +33,9 @@ class TeacherPage extends StatelessWidget {
     },
     {
       "image": "assets/images/mapel.png",
-      "title": "MaPel",
-      "action": "/profil",
+      "title": "MataPelajaran",
+      "action": "/mapel",
     },
-    {"image": "assets/images/nilai.png", "title": "Nilai", "action": "/profil"},
   ];
 
   @override
@@ -45,6 +44,72 @@ class TeacherPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kPurpleColor,
         elevation: 0,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: kPrimaryColor,
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                      height: 70,
+                      width: 70,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(6.0),
+                    child: Text(
+                      'SMP BINA TARUNA MEDAN',
+                      style: whiteTextStyle.copyWith(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: const Text('Profil'),
+              onTap: () => Navigator.pushNamed(context, '/identitas-teacher'),
+            ),
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/login'),
+              child: Container(
+                width: 200,
+                height: 50,
+                margin: EdgeInsets.all(10),
+                child: Card(
+                  color: Colors.green,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 50),
+                      ),
+                      Text(
+                        "Keluar",
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  elevation: 8,
+                  shadowColor: Colors.green,
+                  shape: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(color: Colors.white)),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [
