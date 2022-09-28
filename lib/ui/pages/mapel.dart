@@ -92,14 +92,14 @@ class MataPelajaran extends StatelessWidget {
                 cells: [
                   DataCell(Text('10')),
                   DataCell(Text('Kety Suyati, S.Pd')),
-                  DataCell(Text('PAI')),
+                  DataCell(Text('B. Inggris')),
                 ],
               ),
               DataRow(
                 cells: [
                   DataCell(Text('11')),
                   DataCell(Text('Novenna N., S.Kom')),
-                  DataCell(Text('B.Indonesia')),
+                  DataCell(Text('Prakarya')),
                 ],
               ),
               DataRow(
