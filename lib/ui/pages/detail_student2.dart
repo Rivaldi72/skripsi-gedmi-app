@@ -14,7 +14,7 @@ class DetailStudent2 extends StatelessWidget {
     },
     {
       "image": "assets/images/siswi.png",
-      "title": "Amelia Rahmawti",
+      "title": "Amelia Rahmawati",
       "nis": "21288091",
       "action": "/identitas-student",
     },

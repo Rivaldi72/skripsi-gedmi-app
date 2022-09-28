@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:skripsi/ui/pages/detail_teacher.dart';
 import 'package:skripsi/ui/pages/informasi_page.dart';
 import 'package:skripsi/ui/pages/kelas_page.dart';
+import 'package:skripsi/ui/pages/mapel.dart';
 import 'package:skripsi/ui/pages/splash_page.dart';
 import 'package:skripsi/ui/pages/login_page.dart';
 import 'package:skripsi/ui/pages/teacher_page.dart';
@@ -23,6 +24,7 @@ import 'package:skripsi/ui/pages/detail_student3.dart';
 import 'package:skripsi/ui/pages/test_screen.dart';
 import 'package:skripsi/ui/pages/identitas_teacher.dart';
 import 'package:skripsi/ui/pages/identitas_student.dart';
+import 'package:skripsi/ui/pages/mapel.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +58,8 @@ class MyApp extends StatelessWidget {
         '/detail-student-page3': (context) => DetailStudent3(),
         '/testscreen': (context) => const TestScreen(),
         '/identitas-teacher': (context) => const IdentitasTeacher(),
-        '/identitas-student': (context) => const IdentitasStudent(),
+        '/identitas-student': (context) => IdentitasStudent(),
+        '/mapel': (context) => const MataPelajaran(),
       },
     );
   }

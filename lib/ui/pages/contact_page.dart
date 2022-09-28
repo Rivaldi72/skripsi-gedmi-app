@@ -8,7 +8,6 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kontak"),
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),
@@ -17,7 +16,7 @@ class ContactPage extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 210,
+            height: 200,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -30,297 +29,113 @@ class ContactPage extends StatelessWidget {
           Column(
             children: [
               Container(
+                padding: EdgeInsets.only(top: 10, right: 20, left: 20),
                 margin: EdgeInsets.only(top: 150),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 50),
               Expanded(
                 child: ListView(
-                  padding:
-                      const EdgeInsets.only(bottom: 120, left: 20, right: 20),
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Nama Sekolah : SMP Bina Taruna Medan',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Nama Sekolah",
+                      isi: "SMP Bina Taruna Medan",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'NPSN : 10210143',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "NPSN",
+                      isi: "10210143",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Alamat : Jln.marelan Raya No. 100',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Alamat",
+                      isi: "Jln.marelan Raya No. 100",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Kode Pos : 20255',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Kode Pos",
+                      isi: "20255",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Desa/Kelurahan : Rengas Pulau',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Desa/Kelurahan",
+                      isi: "Rengas Pulau",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Kecamatan : Medan Marelan',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Kecamatan",
+                      isi: "Medan Marelan",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Kota/Kebupaten : Kota Medan',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Kota/Kebupaten",
+                      isi: "Kota Medan",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Provinsi : Sumatera Utara',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Provinsi",
+                      isi: "Sumatera Utara",
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 20),
-                      width: MediaQuery.of(context).size.width - 20,
-                      height: 48,
-                      decoration: BoxDecoration(
-                        color: kWhiteColor,
-                        boxShadow: [
-                          BoxShadow(
-                            color: kBlackColor.withOpacity(0.1),
-                            blurRadius: 10,
-                            offset: const Offset(0, 0),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Email : smpswtbinataruna@gmail.com',
-                              style: blackTextStyle.copyWith(
-                                fontSize: 16,
-                                fontWeight: black,
-                                height: 0.9,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    CardContact(
+                      judul: "Email",
+                      isi: "smpswtbinataruna@gmail.com",
                     ),
                   ],
                 ),
-              )
+              ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CardContact extends StatelessWidget {
+  final String judul, isi;
+
+  const CardContact({
+    Key? key,
+    required this.judul,
+    required this.isi,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(top: 10, right: 20, left: 20),
+      margin: EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            judul,
+            style: TextStyle(fontWeight: black, fontSize: 18.0),
+          ),
+          SizedBox(
+            height: 6,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            width: MediaQuery.of(context).size.width - 20,
+            height: 48,
+            decoration: BoxDecoration(
+              color: kWhiteColor,
+              boxShadow: [
+                BoxShadow(
+                  color: kBlackColor.withOpacity(0.1),
+                  blurRadius: 10,
+                  offset: const Offset(0, 0),
+                ),
+              ],
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Row(
+                children: [
+                  Text(
+                    isi,
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      height: 0.9,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
