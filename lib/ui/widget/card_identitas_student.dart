@@ -13,12 +13,6 @@ class CardIdentitasStudent extends StatelessWidget {
     required this.isi,
   }) : super(key: key);
 
-  @override
-  void initState() {
-    initState();
-    textController.text = isi;
-  }
-
   void dispose() {
     textController.dispose();
     dispose();
@@ -26,6 +20,7 @@ class CardIdentitasStudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    textController.text = isi;
     return Container(
       padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
       margin: const EdgeInsets.only(bottom: 20),
