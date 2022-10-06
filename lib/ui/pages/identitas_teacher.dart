@@ -7,6 +7,9 @@ class IdentitasTeacher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+    print(arguments['idGuru'] + 'sdasdasd');
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
@@ -14,41 +17,54 @@ class IdentitasTeacher extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Nama",
-            isi: "Masukkan Nama",
+            label: "Masukkan Nama",
+            isi: arguments['idGuru'] == '1'
+                ? "Dr. Mesran, M.Pd"
+                : "Tatang A Traigan,  S.Psi",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Tempat Lahir",
-            isi: "Masukkan Tempat Lahir",
+            label: "Masukkan Tempat Lahir",
+            isi: arguments['idGuru'] == '1' ? "P. Siantar" : "Medan",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Tanggal Lahir",
-            isi: "Masukkan Tanggal Lahir",
+            label: "Masukkan Tanggal Lahir",
+            isi: arguments['idGuru'] == '1' ? "1973-06-05" : "1984-06-28",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Jabatan",
-            isi: "Masukkan Jabatan",
+            label: "Masukkan Jabatan",
+            isi: arguments['idGuru'] == '1' ? "Kepala Sekolah" : "Guru",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Tamatan",
-            isi: "Masukkan Tamatan",
+            label: "Masukkan Tamatan",
+            isi: arguments['idGuru'] == '1' ? "2019" : "2001",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Gelar",
-            isi: "Masukkan Gelar",
+            label: "Masukkan Gelar",
+            isi: arguments['idGuru'] == '1' ? "S3" : "S1",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Bidang Studi",
-            isi: "Masukkan Bidang Studi",
+            label: "Masukkan Bidang Studi",
+            isi: arguments['idGuru'] == '1' ? "-" : "Bimbingan Konseling (BK)",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Agama",
-            isi: "Masukkan Agama",
+            label: "Masukkan Agama",
+            isi: arguments['idGuru'] == '1' ? "Islam" : "Islam",
           ),
-          CardIdentitasTeacher(
+          IdentitasGuru(
             judul: "Alamat",
-            isi: "Masukkan Alamat",
+            label: "Masukkan Alamat",
+            isi: arguments['idGuru'] == '1'
+                ? "JL. TS 01 Blok 6. Martubung"
+                : "JL. Pasar III Marelan",
           ),
         ],
       ),
@@ -56,35 +72,44 @@ class IdentitasTeacher extends StatelessWidget {
   }
 }
 
-class CardIdentitasTeacher extends StatelessWidget {
-  final String judul, isi;
+class IdentitasGuru extends StatelessWidget {
+  final String judul, label, isi;
+  final textController = TextEditingController();
 
-  const CardIdentitasTeacher({
+  IdentitasGuru({
     Key? key,
     required this.judul,
+    required this.label,
     required this.isi,
   }) : super(key: key);
 
+  void dispose() {
+    textController.dispose();
+    dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    textController.text = isi;
     return Container(
-      padding: EdgeInsets.only(top: 10, right: 20, left: 20),
-      margin: EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             judul,
-            style: TextStyle(fontSize: 18.0),
+            style: const TextStyle(fontSize: 18.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           TextFormField(
-            style: TextStyle(fontSize: 14.0),
+            controller: textController,
+            style: const TextStyle(fontSize: 14.0),
             cursorColor: kBlackColor,
             decoration: InputDecoration(
-              hintText: isi,
+              hintText: label,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(defaultRadius),
               ),

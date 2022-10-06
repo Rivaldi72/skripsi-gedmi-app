@@ -25,6 +25,10 @@ import 'package:skripsi/ui/pages/test_screen.dart';
 import 'package:skripsi/ui/pages/identitas_teacher.dart';
 import 'package:skripsi/ui/pages/identitas_student.dart';
 import 'package:skripsi/ui/pages/mapel.dart';
+import 'package:skripsi/ui/pages/jadwal.dart';
+import 'package:skripsi/ui/pages/mapel7.dart';
+import 'package:skripsi/ui/pages/mapel8.dart';
+import 'package:skripsi/ui/pages/mapel9.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,6 +64,10 @@ class MyApp extends StatelessWidget {
         '/identitas-teacher': (context) => const IdentitasTeacher(),
         '/identitas-student': (context) => IdentitasStudent(),
         '/mapel': (context) => const MataPelajaran(),
+        '/jadwalmapel': (context) => const JadwalMapel(),
+        '/jadwalmapel7': (context) => const JadwalMapel7(),
+        '/jadwalmapel8': (context) => const JadwalMapel8(),
+        '/jadwalmapel9': (context) => const JadwalMapel9(),
       },
     );
   }

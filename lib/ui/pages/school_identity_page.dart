@@ -8,6 +8,7 @@ class SchoolIdentityPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("Identitas Sekolah"),
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),

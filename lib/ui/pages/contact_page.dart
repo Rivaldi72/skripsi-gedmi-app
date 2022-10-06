@@ -8,6 +8,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text("Kontak Sekolah"),
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),

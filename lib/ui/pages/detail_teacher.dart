@@ -10,11 +10,13 @@ class DetailTeacher extends StatelessWidget {
       "image": "assets/images/laki.png",
       "title": "Dr. Mesran, M.Pdi",
       "action": "/identitas-teacher",
+      "idGuru": "1",
     },
     {
       "image": "assets/images/laki.png",
       "title": "Tatang A Tarigan, S.Psi",
       "action": "/identitas-teacher",
+      "idGuru": "2",
     },
     {
       "image": "assets/images/guru.png",
@@ -115,6 +117,7 @@ class DetailTeacher extends StatelessWidget {
                     title:
                         menuGuru[index]['title'] ?? 'asssets/images/logo.png',
                     action: menuGuru[index]['action'] ?? '/teacher-page',
+                    idGuru: menuGuru[index]['idGuru'] ?? '1',
                   );
                 }),
           ),

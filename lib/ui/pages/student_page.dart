@@ -31,6 +31,11 @@ class StudentPage extends StatelessWidget {
       "title": "MataPelajaran",
       "action": "/mapel"
     },
+    {
+      "image": "assets/images/mapel.png",
+      "title": "Jadwal MaPel",
+      "action": "/jadwalmapel"
+    },
   ];
 
   @override
