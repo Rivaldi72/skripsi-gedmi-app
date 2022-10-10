@@ -69,11 +69,8 @@ class _DetailTeacherState extends State<DetailTeacher> {
                           );
                         },
                         child: CardMenuGuru(
-                          image: menuGuru[index]['image'] ??
-                              'asssets/images/logo.png',
-                          title: menuGuru[index]['title'] ??
-                              'asssets/images/logo.png',
-                          action: menuGuru[index]['action'] ?? '/teacher-page',
+                          image: 'assets/images/logo.png',
+                          title: menuGuru[index]['nama'] ?? 'Nama tidak ada',
                         ),
                       );
                     },

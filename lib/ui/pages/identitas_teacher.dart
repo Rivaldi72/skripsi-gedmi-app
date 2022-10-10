@@ -7,6 +7,8 @@ class IdentitasTeacher extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
@@ -16,39 +18,48 @@ class IdentitasTeacher extends StatelessWidget {
         children: [
           CardIdentitasTeacher(
             judul: "Nama",
-            isi: "Masukkan Nama",
+            isi: arguments['nama'],
+            placeholder: "Masukkan Nama",
           ),
           CardIdentitasTeacher(
             judul: "Tempat Lahir",
-            isi: "Masukkan Tempat Lahir",
+            isi: arguments['tempat_lahir'],
+            placeholder: "Masukkan Tempat Lahir",
           ),
           CardIdentitasTeacher(
             judul: "Tanggal Lahir",
-            isi: "Masukkan Tanggal Lahir",
+            isi: arguments['tanggal_lahir'],
+            placeholder: "Masukkan Tanggal Lahir",
           ),
           CardIdentitasTeacher(
             judul: "Jabatan",
-            isi: "Masukkan Jabatan",
+            isi: arguments['jabatan'],
+            placeholder: "Masukkan Jabatan",
           ),
           CardIdentitasTeacher(
             judul: "Tamatan",
-            isi: "Masukkan Tamatan",
+            isi: arguments['tamatan'],
+            placeholder: "Masukkan Tamatan",
           ),
           CardIdentitasTeacher(
             judul: "Gelar",
-            isi: "Masukkan Gelar",
+            isi: arguments['gelar'],
+            placeholder: "Masukkan Gelar",
           ),
           CardIdentitasTeacher(
             judul: "Bidang Studi",
-            isi: "Masukkan Bidang Studi",
+            isi: arguments['bidang_studi'],
+            placeholder: "Masukkan Bidang Studi",
           ),
           CardIdentitasTeacher(
             judul: "Agama",
-            isi: "Masukkan Agama",
+            isi: arguments['agama'],
+            placeholder: "Masukkan Agama",
           ),
           CardIdentitasTeacher(
             judul: "Alamat",
-            isi: "Masukkan Alamat",
+            isi: arguments['alamat'],
+            placeholder: "Masukkan Alamat",
           ),
         ],
       ),
@@ -57,34 +68,39 @@ class IdentitasTeacher extends StatelessWidget {
 }
 
 class CardIdentitasTeacher extends StatelessWidget {
-  final String judul, isi;
-
-  const CardIdentitasTeacher({
+  final String judul, placeholder, isi;
+  final bool readOnly;
+  TextEditingController textController = TextEditingController();
+  CardIdentitasTeacher({
     Key? key,
+    this.readOnly = true,
     required this.judul,
     required this.isi,
+    required this.placeholder,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10, right: 20, left: 20),
-      margin: EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
+      margin: const EdgeInsets.only(bottom: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             judul,
-            style: TextStyle(fontSize: 18.0),
+            style: const TextStyle(fontSize: 18.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           TextFormField(
-            style: TextStyle(fontSize: 14.0),
+            controller: textController..text = isi,
+            readOnly: readOnly,
+            style: const TextStyle(fontSize: 14.0),
             cursorColor: kBlackColor,
             decoration: InputDecoration(
-              hintText: isi,
+              hintText: placeholder,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(defaultRadius),
               ),
