@@ -44,14 +44,14 @@ class _DetailStudentState extends State<DetailStudent> {
                 return Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    itemCount: menuSiswa.lenght,
+                    itemCount: menuSiswa.length,
                     itemBuilder: (context, index) {
                       final menuSiswa = snapshot.data as List;
                       return GestureDetector(
                         onTap: () {
                           Navigator.pushNamed(
                             context,
-                            '/identitas_student',
+                            '/identitas-student',
                             arguments: {
                               'id_user': menuSiswa[index]['id_user'],
                               'nis': menuSiswa[index]['nis'],
