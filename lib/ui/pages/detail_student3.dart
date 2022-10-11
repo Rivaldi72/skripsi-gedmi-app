@@ -150,8 +150,8 @@ class DetailStudent3 extends StatelessWidget {
                     title:
                         menuSiswa[index]['title'] ?? 'assets/images/siswi.png',
                     nis: menuSiswa[index]['nis'] ?? 'assets/images/siswi.png',
-                    action: menuSiswa[index]['action'] ?? '/identitas-student',
-                    idSiswa: menuSiswa[index]['id_siswa'] ?? '1',
+                    // action: menuSiswa[index]['action'] ?? '/identitas-student',
+                    // idSiswa: menuSiswa[index]['id_siswa'] ?? '1',
                   );
                 }),
           ),
