@@ -26,8 +26,8 @@ import 'package:skripsi/ui/pages/identitas_teacher.dart';
 import 'package:skripsi/ui/pages/identitas_student.dart';
 import 'package:skripsi/ui/pages/mapel.dart';
 import 'package:skripsi/ui/pages/jadwal.dart';
-import 'package:skripsi/ui/pages/mapel7.dart';
 import 'package:skripsi/ui/pages/mapel8.dart';
+import 'package:skripsi/ui/pages/mapel7.dart';
 import 'package:skripsi/ui/pages/mapel9.dart';
 
 void main() {

@@ -150,7 +150,7 @@ Widget _buildButton(BuildContext context) {
     margin: EdgeInsets.symmetric(vertical: 35),
     child: TextButton(
       onPressed: () {
-        Navigator.pushNamed(context, '/student-page');
+        Navigator.pushNamed(context, '/teacher-page');
       },
       style: TextButton.styleFrom(
         backgroundColor: kWhiteColor,
