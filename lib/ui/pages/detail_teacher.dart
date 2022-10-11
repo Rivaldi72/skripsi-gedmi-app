@@ -18,7 +18,7 @@ class _DetailTeacherState extends State<DetailTeacher> {
 
   Future<void> ambilDataGuru() async {
     final response = await http
-        .get(Uri.parse('https://ayo-wisuda.site/api/gedmi/guru/index'));
+        .get(Uri.parse('https://ayo-wisuda.site/api/dedi/materiindex/1'));
 
     if (response.statusCode == 200) {
       menuGuru = jsonDecode(response.body.toString());
