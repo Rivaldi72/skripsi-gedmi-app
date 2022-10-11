@@ -15,49 +15,110 @@ class IdentitasStudent extends StatelessWidget {
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),
-      body: ListView(
-        children: [
-          CardIdentitasStudent(
-            judul: "NIS",
-            label: "Masukkan NIS",
-            isi: arguments['nis'],
-          ),
-          CardIdentitasStudent(
-            judul: "Nama",
-            label: "Masukkan Nama",
-            isi: arguments['nama'],
-          ),
-          CardIdentitasStudent(
-            judul: "Tempat Lahir",
-            label: "Masukkan Tempat Lahir",
-            isi: arguments['tempat_lahir'],
-          ),
-          CardIdentitasStudent(
-            judul: "Tanggal Lahir",
-            label: "Masukkan Tanggal Lahir",
-            isi: arguments['tanggal_lahir'],
-          ),
-          CardIdentitasStudent(
-            judul: "Tahun Masuk",
-            label: "Masukkan Tahun Masuk",
-            isi: arguments['tahun_masuk'],
-          ),
-          CardIdentitasStudent(
-            judul: "Jenis Kelamin",
-            label: "Masukkan Jenis Kelamin",
-            isi: arguments['jenis_kelamin'],
-          ),
-          CardIdentitasStudent(
-            judul: "Agama",
-            label: "Masukkan Agama",
-            isi: arguments['agama'],
-          ),
-          CardIdentitasStudent(
-            judul: "Alamat",
-            label: "Masukkan Alamat",
-            isi: arguments['alamat'],
-          ),
-        ],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.only(bottom: 100),
+        child: Column(
+          children: [
+            CardIdentitasStudent(
+              judul: "NIS",
+              isi: arguments['nis'],
+            ),
+            CardIdentitasStudent(
+              judul: "Nama",
+              isi: arguments['nama'],
+            ),
+            CardIdentitasStudent(
+              judul: "Tempat Lahir",
+              isi: arguments['tempat_lahir'],
+            ),
+            CardIdentitasStudent(
+              judul: "Tanggal Lahir",
+              isi: arguments['tanggal_lahir'],
+            ),
+            CardIdentitasStudent(
+              judul: "Tahun Masuk",
+              isi: arguments['tahun_masuk'],
+            ),
+            CardIdentitasStudent(
+              judul: "Jenis Kelamin",
+              isi: arguments['jenis_kelamin'],
+            ),
+            CardIdentitasStudent(
+              judul: "Agama",
+              isi: arguments['agama'],
+            ),
+            CardIdentitasStudent(
+              judul: "Alamat",
+              isi: arguments['alamat'],
+            ),
+            ExpansionTile(
+              title: const Text('Semester 1'),
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "Bahasa Indonesia",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "NIS",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "NIS",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            ExpansionTile(
+              title: const Text('Semester 2'),
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "Bahasa Indonesia",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "NIS",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                    Expanded(
+                      child: CardIdentitasStudent(
+                        judul: "NIS",
+                        isi: arguments['nis'],
+                        textSize: 12,
+                        centerText: true,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

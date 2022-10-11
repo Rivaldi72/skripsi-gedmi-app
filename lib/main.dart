@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         '/detail-student-page3': (context) => DetailStudent3(),
         '/testscreen': (context) => const TestScreen(),
         '/identitas-teacher': (context) => const IdentitasTeacher(),
-        '/identitas-student': (context) => IdentitasStudent(),
+        '/identitas-student': (context) => const IdentitasStudent(),
         '/mapel': (context) => const MataPelajaran(),
         '/jadwalmapel': (context) => const JadwalMapel(),
         '/jadwalmapel7': (context) => const JadwalMapel7(),
