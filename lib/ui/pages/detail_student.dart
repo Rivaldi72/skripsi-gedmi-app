@@ -1,161 +1,89 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:skripsi/shared/theme.dart';
-
+import 'package:http/http.dart' as http;
 import '../widget/card_menu_siswa.dart';
 
-class DetailStudent extends StatelessWidget {
+class DetailStudent extends StatefulWidget {
   DetailStudent({Key? key}) : super(key: key);
-  var menuSiswa = [
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Adira Wibowo",
-      "nis": "21288090",
-      "action": "/identitas-student",
-      "idSiswa": "1",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Agustina Risentri Salme H.",
-      "nis": "21288091",
-      "action": "/identitas-student",
-      "idSiswa": "2",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Aldo Ardiansyah Tarigan",
-      "nis": "21288092",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Angel Kids Coilal",
-      "nis": "21288093",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Annisa Nurul Qulbi",
-      "nis": "21288094",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Arif Prawira Sihombing",
-      "nis": "21288095",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Belinda Cicilia Dakhi",
-      "nis": "21288096",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Dika Satrio",
-      "nis": "21288097",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Dimas Albianto",
-      "nis": "21288098",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Intan",
-      "nis": "21288099",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Jessica Priscilia Hondro",
-      "nis": "21288100",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Kayra Shalimar",
-      "nis": "21288101",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Keisita Maharani",
-      "nis": "21288102",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswi.png",
-      "title": "Keyra Suci Ramadhanti Hrp.",
-      "nis": "21288103",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Luis Kristian Yasarododo Hondro",
-      "nis": "21288104",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "M. Hanafiz",
-      "nis": "21288105",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Muhammad Aidil",
-      "nis": "21288106",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Muhammad Al Riyansyah",
-      "nis": "21288107",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Muhammad Andika Pratama",
-      "nis": "21288108",
-      "action": "/identitas-student",
-    },
-    {
-      "image": "assets/images/siswa.png",
-      "title": "Muhammad Nanda",
-      "nis": "21288109",
-      "action": "/identitas-student",
-    },
-  ];
+
+  @override
+  State<DetailStudent> createState() => _DetailStudentState();
+}
+
+class _DetailStudentState extends State<DetailStudent> {
+  var menuSiswa;
+  Future<void> ambilDataSiswa() async {
+    final response = await http
+        .get(Uri.parse('https://ayo-wisuda.site/api/gedmi/siswa/indexsiswa'));
+
+    if (response.statusCode == 200) {
+      menuSiswa = jsonDecode(response.body.toString());
+      return menuSiswa;
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kelas VII"),
+        title: Text("Siswa Kelas VII"),
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),
       body: Column(
         children: [
           Container(),
-          Expanded(
-            child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                itemCount: menuSiswa.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return CardMenuSiswa(
-                    image:
-                        menuSiswa[index]['image'] ?? 'assets/images/siswi.png',
-                    title:
-                        menuSiswa[index]['title'] ?? 'assets/images/siswi.png',
-                    nis: menuSiswa[index]['nis'] ?? 'assets/images/siswi.png',
-                    action: menuSiswa[index]['action'] ?? '/identitas-student',
-                    idSiswa: menuSiswa[index]['idSiswa'] ?? '1',
-                  );
-                }),
+          FutureBuilder(
+            future: ambilDataSiswa(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    itemCount: menuSiswa.lenght,
+                    itemBuilder: (context, index) {
+                      final menuSiswa = snapshot.data as List;
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/identitas_student',
+                            arguments: {
+                              'id_user': menuSiswa[index]['id_user'],
+                              'nis': menuSiswa[index]['nis'],
+                              'nama': menuSiswa[index]['nama'],
+                              'tempat_lahir': menuSiswa[index]['tempat_lahir'],
+                              'tanggal_lahir': menuSiswa[index]
+                                  ['tanggal_lahir'],
+                              'tahun_masuk': menuSiswa[index]['tahun_masuk'],
+                              'jenis_kelamin': menuSiswa[index]
+                                  ['jenis_kelamin'],
+                              'agama': menuSiswa[index]['agama'],
+                              'alamat': menuSiswa[index]['alamat'],
+                            },
+                          );
+                        },
+                        child: CardMenuSiswa(
+                          image: 'assets/images/siswi.png',
+                          title: menuSiswa[index]['nama'] ?? 'Nama tidak ada',
+                          nis: menuSiswa[index]['nis'] ?? 'Nis tidak ada',
+                        ),
+                      );
+                    },
+                  ),
+                );
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
           ),
         ],
       ),

@@ -4,19 +4,16 @@ import '../../shared/theme.dart';
 
 class CardIdentitasStudent extends StatelessWidget {
   final String judul, label, isi;
-  final textController = TextEditingController();
+  final bool readOnly;
+  TextEditingController textController = TextEditingController();
 
   CardIdentitasStudent({
     Key? key,
+    this.readOnly = true,
     required this.judul,
     required this.label,
     required this.isi,
   }) : super(key: key);
-
-  void dispose() {
-    textController.dispose();
-    dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,8 @@ class CardIdentitasStudent extends StatelessWidget {
             height: 6,
           ),
           TextFormField(
-            controller: textController,
+            controller: textController..text = isi,
+            readOnly: readOnly,
             style: const TextStyle(fontSize: 14.0),
             cursorColor: kBlackColor,
             decoration: InputDecoration(

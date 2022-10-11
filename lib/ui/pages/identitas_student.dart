@@ -9,7 +9,7 @@ class IdentitasStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
-    print(arguments['idSiswa'] + 'sdasdasd');
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
@@ -20,46 +20,42 @@ class IdentitasStudent extends StatelessWidget {
           CardIdentitasStudent(
             judul: "NIS",
             label: "Masukkan NIS",
-            isi: arguments['idSiswa'] == '1' ? "21288090" : "21288091",
+            isi: arguments['nis'],
           ),
           CardIdentitasStudent(
             judul: "Nama",
             label: "Masukkan Nama",
-            isi: arguments['idSiswa'] == '1'
-                ? "Adira Wibowo"
-                : "Agustina Risentri Salme H.",
+            isi: arguments['nama'],
           ),
           CardIdentitasStudent(
             judul: "Tempat Lahir",
             label: "Masukkan Tempat Lahir",
-            isi: arguments['idSiswa'] == '1' ? "Medan" : "Medan",
+            isi: arguments['tempat_lahir'],
           ),
           CardIdentitasStudent(
             judul: "Tanggal Lahir",
             label: "Masukkan Tanggal Lahir",
-            isi: arguments['idSiswa'] == '1' ? "28 Mei 2009" : "20 Maret 2009",
+            isi: arguments['tanggal_lahir'],
           ),
           CardIdentitasStudent(
             judul: "Tahun Masuk",
             label: "Masukkan Tahun Masuk",
-            isi: arguments['idSiswa'] == '1' ? "2022" : "2022",
+            isi: arguments['tahun_masuk'],
           ),
           CardIdentitasStudent(
             judul: "Jenis Kelamin",
             label: "Masukkan Jenis Kelamin",
-            isi: arguments['idSiswa'] == '1' ? "Perempuan" : "Perempuan",
+            isi: arguments['jenis_kelamin'],
           ),
           CardIdentitasStudent(
             judul: "Agama",
             label: "Masukkan Agama",
-            isi: arguments['idSiswa'] == '1' ? "Islam" : "Islam",
+            isi: arguments['agama'],
           ),
           CardIdentitasStudent(
             judul: "Alamat",
             label: "Masukkan Alamat",
-            isi: arguments['idSiswa'] == '1'
-                ? "Jl. Marelan V Pasar 2 Barat"
-                : "Jl. Marelan III",
+            isi: arguments['agama'],
           ),
         ],
       ),
