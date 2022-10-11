@@ -74,7 +74,6 @@ class _DetailTeacherState extends State<DetailTeacher> {
                           title: menuGuru[index]['title'] ??
                               'asssets/images/logo.png',
                           action: menuGuru[index]['action'] ?? '/teacher-page',
-                          idGuru: menuGuru[index]['idGuru'] ?? '1',
                         ),
                       );
                     },

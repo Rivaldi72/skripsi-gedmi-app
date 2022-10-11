@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:skripsi/shared/theme.dart';
 
 class CardMenuGuru extends StatelessWidget {
-  final String image, title, action, idGuru;
+  final String image, title, action;
 
   const CardMenuGuru({
     Key? key,
-    required this.idGuru,
     required this.image,
     required this.title,
     required this.action,
@@ -16,11 +15,7 @@ class CardMenuGuru extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          action,
-          arguments: {'idGuru': idGuru},
-        );
+        Navigator.pushNamed(context, action);
       },
       child: Container(
         margin: EdgeInsets.only(top: 20),
