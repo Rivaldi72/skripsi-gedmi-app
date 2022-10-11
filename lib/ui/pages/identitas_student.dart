@@ -55,7 +55,7 @@ class IdentitasStudent extends StatelessWidget {
           CardIdentitasStudent(
             judul: "Alamat",
             label: "Masukkan Alamat",
-            isi: arguments['agama'],
+            isi: arguments['alamat'],
           ),
         ],
       ),
