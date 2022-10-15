@@ -114,31 +114,6 @@ Widget _textField() {
         obscureText: true,
         autofocus: false,
       ),
-      Padding(
-        padding: EdgeInsets.only(top: 12.0),
-      ),
-      TextFormField(
-        decoration: const InputDecoration(
-          border: UnderlineInputBorder(),
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: ColorPalette.underlineTextField,
-              width: 1.5,
-            ),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.white,
-              width: 3.0,
-            ),
-          ),
-          hintText: "Jabatan",
-          hintStyle: TextStyle(color: ColorPalette.hintColor),
-        ),
-        style: TextStyle(color: Colors.white),
-        obscureText: true,
-        autofocus: false,
-      ),
     ],
   );
 }

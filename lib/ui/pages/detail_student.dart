@@ -15,8 +15,8 @@ class DetailStudent extends StatefulWidget {
 class _DetailStudentState extends State<DetailStudent> {
   var menuSiswa;
   Future<void> ambilDataSiswa() async {
-    final response = await http
-        .get(Uri.parse('https://ayo-wisuda.site/api/gedmi/siswa/indexsiswa'));
+    final response = await http.get(
+        Uri.parse('https://ayo-wisuda.site/api/gedmi/siswa/indexsiswa/VII'));
 
     if (response.statusCode == 200) {
       menuSiswa = jsonDecode(response.body.toString());
