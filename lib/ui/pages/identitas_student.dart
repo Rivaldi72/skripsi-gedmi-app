@@ -9,7 +9,7 @@ class IdentitasStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
-
+    print(arguments);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
@@ -21,35 +21,35 @@ class IdentitasStudent extends StatelessWidget {
           children: [
             CardIdentitasStudent(
               judul: "NIS",
-              isi: arguments['nis'],
+              isi: arguments['nis'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Nama",
-              isi: arguments['nama'],
+              isi: arguments['nama'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Tempat Lahir",
-              isi: arguments['tempat_lahir'],
+              isi: arguments['tempat_lahir'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Tanggal Lahir",
-              isi: arguments['tanggal_lahir'],
+              isi: arguments['tanggal_lahir'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Tahun Masuk",
-              isi: arguments['tahun_masuk'],
+              isi: arguments['tahun_masuk'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Jenis Kelamin",
-              isi: arguments['jenis_kelamin'],
+              isi: arguments['jenis_kelamin'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Agama",
-              isi: arguments['agama'],
+              isi: arguments['agama'] ?? '',
             ),
             CardIdentitasStudent(
               judul: "Alamat",
-              isi: arguments['alamat'],
+              isi: arguments['alamat'] ?? '',
             ),
             ExpansionTile(
               title: const Text('Semester 1'),
@@ -59,7 +59,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_1'],
+                        isi: arguments['matematika_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -67,7 +67,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_1'],
+                        isi: arguments['bindo_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -75,7 +75,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_1'],
+                        isi: arguments['bing_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -87,7 +87,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_1'],
+                        isi: arguments['ipa_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -95,7 +95,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_1'],
+                        isi: arguments['ips_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -103,7 +103,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_1'],
+                        isi: arguments['pkn_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -115,7 +115,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_1'],
+                        isi: arguments['agama_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -123,7 +123,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_1'],
+                        isi: arguments['penjas_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -131,7 +131,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_1'],
+                        isi: arguments['senbud_1'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -148,7 +148,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_2'],
+                        isi: arguments['matematika_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -156,7 +156,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_2'],
+                        isi: arguments['bindo_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -164,7 +164,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_2'],
+                        isi: arguments['bing_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -176,7 +176,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_2'],
+                        isi: arguments['ipa_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -184,7 +184,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_2'],
+                        isi: arguments['ips_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -192,7 +192,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_2'],
+                        isi: arguments['pkn_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -204,7 +204,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_2'],
+                        isi: arguments['agama_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -212,7 +212,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_2'],
+                        isi: arguments['penjas_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -220,7 +220,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_2'],
+                        isi: arguments['senbud_2'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -237,7 +237,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_3'],
+                        isi: arguments['matematika_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -245,7 +245,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_3'],
+                        isi: arguments['bindo_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -253,7 +253,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_3'],
+                        isi: arguments['bing_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -265,7 +265,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_3'],
+                        isi: arguments['ipa_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -273,7 +273,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_3'],
+                        isi: arguments['ips_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -281,7 +281,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_3'],
+                        isi: arguments['pkn_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -293,7 +293,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_3'],
+                        isi: arguments['agama_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -301,7 +301,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_3'],
+                        isi: arguments['penjas_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -309,7 +309,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_3'],
+                        isi: arguments['senbud_3'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -326,7 +326,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_4'],
+                        isi: arguments['matematika_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -334,7 +334,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_4'],
+                        isi: arguments['bindo_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -342,7 +342,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_4'],
+                        isi: arguments['bing_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -354,7 +354,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_4'],
+                        isi: arguments['ipa_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -362,7 +362,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_4'],
+                        isi: arguments['ips_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -370,7 +370,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_4'],
+                        isi: arguments['pkn_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -382,7 +382,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_4'],
+                        isi: arguments['agama_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -390,7 +390,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_4'],
+                        isi: arguments['penjas_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -398,7 +398,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_4'],
+                        isi: arguments['senbud_4'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -415,7 +415,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_5'],
+                        isi: arguments['matematika_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -423,7 +423,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_5'],
+                        isi: arguments['bindo_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -431,7 +431,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_5'],
+                        isi: arguments['bing_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -443,7 +443,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_5'],
+                        isi: arguments['ipa_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -451,7 +451,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_5'],
+                        isi: arguments['ips_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -459,7 +459,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_5'],
+                        isi: arguments['pkn_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -471,7 +471,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_5'],
+                        isi: arguments['agama_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -479,7 +479,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_5'],
+                        isi: arguments['penjas_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -487,7 +487,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_5'],
+                        isi: arguments['senbud_5'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -504,7 +504,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Matematika",
-                        isi: arguments['matematika_6'],
+                        isi: arguments['matematika_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -512,7 +512,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Indonesia",
-                        isi: arguments['bindo_6'],
+                        isi: arguments['bindo_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -520,7 +520,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "B.Inggris",
-                        isi: arguments['bing_6'],
+                        isi: arguments['bing_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -532,7 +532,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPA",
-                        isi: arguments['ipa_6'],
+                        isi: arguments['ipa_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -540,7 +540,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "IPS",
-                        isi: arguments['ips_6'],
+                        isi: arguments['ips_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -548,7 +548,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "PKn",
-                        isi: arguments['pkn_6'],
+                        isi: arguments['pkn_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -560,7 +560,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Agama",
-                        isi: arguments['agama_6'],
+                        isi: arguments['agama_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -568,7 +568,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Penjas",
-                        isi: arguments['penjas_6'],
+                        isi: arguments['penjas_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),
@@ -576,7 +576,7 @@ class IdentitasStudent extends StatelessWidget {
                     Expanded(
                       child: CardIdentitasStudent(
                         judul: "Seni Budaya",
-                        isi: arguments['senbud_6'],
+                        isi: arguments['senbud_6'] ?? '',
                         textSize: 12,
                         centerText: true,
                       ),

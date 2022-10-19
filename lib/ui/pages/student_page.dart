@@ -50,28 +50,139 @@ class _StudentPageState extends State<StudentPage> {
       "action": "/jadwalmapel"
     },
   ];
-
+  var nis = '';
+  var nama = '';
+  var tempat_lahir = '';
+  var tanggal_lahir = '';
+  var tahun_masuk = '';
+  var jenis_kelamin = '';
+  var agama = '';
+  var alamat = '';
+  var kelas = '';
+  var matematika_1 = '';
+  var bindo_1 = '';
+  var bing_1 = '';
+  var ipa_1 = '';
+  var ips_1 = '';
+  var pkn_1 = '';
+  var agama_1 = '';
+  var penjas_1 = '';
+  var senbud_1 = '';
+  var matematika_2 = '';
+  var bindo_2 = '';
+  var bing_2 = '';
+  var ipa_2 = '';
+  var ips_2 = '';
+  var pkn_2 = '';
+  var agama_2 = '';
+  var penjas_2 = '';
+  var senbud_2 = '';
+  var matematika_3 = '';
+  var bindo_3 = '';
+  var bing_3 = '';
+  var ipa_3 = '';
+  var ips_3 = '';
+  var pkn_3 = '';
+  var agama_3 = '';
+  var penjas_3 = '';
+  var senbud_3 = '';
+  var matematika_4 = '';
+  var bindo_4 = '';
+  var bing_4 = '';
+  var ipa_4 = '';
+  var ips_4 = '';
+  var pkn_4 = '';
+  var agama_4 = '';
+  var penjas_4 = '';
+  var senbud_4 = '';
+  var matematika_5 = '';
+  var bindo_5 = '';
+  var bing_5 = '';
+  var ipa_5 = '';
+  var ips_5 = '';
+  var pkn_5 = '';
+  var agama_5 = '';
+  var penjas_5 = '';
+  var senbud_5 = '';
+  var matematika_6 = '';
+  var bindo_6 = '';
+  var bing_6 = '';
+  var ipa_6 = '';
+  var ips_6 = '';
+  var pkn_6 = '';
+  var agama_6 = '';
+  var penjas_6 = '';
+  var senbud_6 = '';
   logOut() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.clear();
   }
 
-  Future<void> getBiodataSiswa(context) async {
+  getBiodataSiswa(context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    final queryParam = {
-      'api_token': prefs.getString('api_token'),
-    };
-    final uri = Uri.https(
-        'www.ayo-wisuda.site', '/api/gedmi/get-biodata-siswa', queryParam);
-    final response = await http.post(uri);
-    print(response.body);
-    print(queryParam);
-    if (response.statusCode == 200) {
-      // var data = jsonDecode(response.body.toString());
-      Navigator.pushNamed(context, '/identitas-student');
-    } else {
-      throw Exception('Jaringan Bermasalah');
-    }
+    nis = prefs.getString('nis') ?? '';
+    nama = prefs.getString('nama') ?? '';
+    tempat_lahir = prefs.getString('tempat_lahir') ?? '';
+    tanggal_lahir = prefs.getString('tanggal_lahir') ?? '';
+    tahun_masuk = prefs.getString('tahun_masuk') ?? '';
+    jenis_kelamin = prefs.getString('jenis_kelamin') ?? '';
+    agama = prefs.getString('agama') ?? '';
+    alamat = prefs.getString('alamat') ?? '';
+    kelas = prefs.getString('kelas') ?? '';
+    matematika_1 = prefs.getString('matematika_1') ?? '';
+    bindo_1 = prefs.getString('bindo_1') ?? '';
+    bing_1 = prefs.getString('bing_1') ?? '';
+    ipa_1 = prefs.getString('ipa_1') ?? '';
+    ips_1 = prefs.getString('ips_1') ?? '';
+    pkn_1 = prefs.getString('pkn_1') ?? '';
+    agama_1 = prefs.getString('agama_1') ?? '';
+    penjas_1 = prefs.getString('penjas_1') ?? '';
+    senbud_1 = prefs.getString('senbud_1') ?? '';
+    matematika_2 = prefs.getString('matematika_2') ?? '';
+    bindo_2 = prefs.getString('bindo_2') ?? '';
+    bing_2 = prefs.getString('bing_2') ?? '';
+    ipa_2 = prefs.getString('ipa_2') ?? '';
+    ips_2 = prefs.getString('ips_2') ?? '';
+    pkn_2 = prefs.getString('pkn_2') ?? '';
+    agama_2 = prefs.getString('agama_2') ?? '';
+    penjas_2 = prefs.getString('penjas_2') ?? '';
+    senbud_2 = prefs.getString('senbud_2') ?? '';
+    matematika_3 = prefs.getString('matematika_3') ?? '';
+    bindo_3 = prefs.getString('bindo_3') ?? '';
+    bing_3 = prefs.getString('bing_3') ?? '';
+    ipa_3 = prefs.getString('ipa_3') ?? '';
+    ips_3 = prefs.getString('ips_3') ?? '';
+    pkn_3 = prefs.getString('pkn_3') ?? '';
+    agama_3 = prefs.getString('agama_3') ?? '';
+    penjas_3 = prefs.getString('penjas_3') ?? '';
+    senbud_3 = prefs.getString('senbud_3') ?? '';
+    matematika_4 = prefs.getString('matematika_4') ?? '';
+    bindo_4 = prefs.getString('bindo_4') ?? '';
+    bing_4 = prefs.getString('bing_4') ?? '';
+    ipa_4 = prefs.getString('ipa_4') ?? '';
+    ips_4 = prefs.getString('ips_4') ?? '';
+    pkn_4 = prefs.getString('pkn_4') ?? '';
+    agama_4 = prefs.getString('agama_4') ?? '';
+    penjas_4 = prefs.getString('penjas_4') ?? '';
+    senbud_4 = prefs.getString('senbud_4') ?? '';
+    matematika_5 = prefs.getString('matematika_5') ?? '';
+    bindo_5 = prefs.getString('bindo_5') ?? '';
+    bing_5 = prefs.getString('bing_5') ?? '';
+    ipa_5 = prefs.getString('ipa_5') ?? '';
+    ips_5 = prefs.getString('ips_5') ?? '';
+    pkn_5 = prefs.getString('pkn_5') ?? '';
+    agama_5 = prefs.getString('agama_5') ?? '';
+    penjas_5 = prefs.getString('penjas_5') ?? '';
+    senbud_5 = prefs.getString('senbud_5') ?? '';
+    matematika_6 = prefs.getString('matematika_6') ?? '';
+    bindo_6 = prefs.getString('bindo_6') ?? '';
+    bing_6 = prefs.getString('bing_6') ?? '';
+    ipa_6 = prefs.getString('ipa_6') ?? '';
+    ips_6 = prefs.getString('ips_6') ?? '';
+    pkn_6 = prefs.getString('pkn_6') ?? '';
+    agama_6 = prefs.getString('agama_6') ?? '';
+    penjas_6 = prefs.getString('penjas_6') ?? '';
+    senbud_6 = prefs.getString('senbud_6') ?? '';
   }
 
   @override
@@ -81,6 +192,7 @@ class _StudentPageState extends State<StudentPage> {
 
   @override
   Widget build(BuildContext context) {
+    getBiodataSiswa(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,
@@ -118,7 +230,77 @@ class _StudentPageState extends State<StudentPage> {
             ),
             ListTile(
               title: const Text('Profil'),
-              onTap: () => getBiodataSiswa(context),
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  '/identitas-student',
+                  arguments: {
+                    'nis': nis,
+                    'nama': nama,
+                    'tempat_lahir': tempat_lahir,
+                    'tanggal_lahir': tanggal_lahir,
+                    'tahun_masuk': tahun_masuk,
+                    'jenis_kelamin': jenis_kelamin,
+                    'agama': agama,
+                    'alamat': alamat,
+                    'kelas': kelas,
+                    'matematika_1': matematika_1,
+                    'bindo_1': bindo_1,
+                    'bing_1': bing_1,
+                    'ipa_1': ipa_1,
+                    'ips_1': ips_1,
+                    'pkn_1': pkn_1,
+                    'agama_1': agama_1,
+                    'penjas_1': penjas_1,
+                    'senbud_1': senbud_1,
+                    'matematika_2': matematika_2,
+                    'bindo_2': bindo_2,
+                    'bing_2': bing_2,
+                    'ipa_2': ipa_2,
+                    'ips_2': ips_2,
+                    'pkn_2': pkn_2,
+                    'agama_2': agama_2,
+                    'penjas_2': penjas_2,
+                    'senbud_2': senbud_2,
+                    'matematika_3': matematika_3,
+                    'bindo_3': bindo_3,
+                    'bing_3': bing_3,
+                    'ipa_3': ipa_3,
+                    'ips_3': ips_3,
+                    'pkn_3': pkn_3,
+                    'agama_3': agama_3,
+                    'penjas_3': penjas_3,
+                    'senbud_3': senbud_3,
+                    'matematika_4': matematika_4,
+                    'bindo_4': bindo_4,
+                    'bing_4': bing_4,
+                    'ipa_4': ipa_4,
+                    'ips_4': ips_4,
+                    'pkn_4': pkn_4,
+                    'agama_4': agama_4,
+                    'penjas_4': penjas_4,
+                    'senbud_4': senbud_4,
+                    'matematika_5': matematika_5,
+                    'bindo_5': bindo_5,
+                    'bing_5': bing_5,
+                    'ipa_5': ipa_5,
+                    'ips_5': ips_5,
+                    'pkn_5': pkn_5,
+                    'agama_5': agama_5,
+                    'penjas_5': penjas_5,
+                    'senbud_5': senbud_5,
+                    'matematika_6': matematika_6,
+                    'bindo_6': bindo_6,
+                    'bing_6': bing_6,
+                    'ipa_6': ipa_6,
+                    'ips_6': ips_6,
+                    'pkn_6': pkn_6,
+                    'agama_6': agama_6,
+                    'penjas_6': penjas_6,
+                    'senbud_6': senbud_6,
+                  },
+                );
+              },
             ),
             GestureDetector(
               onTap: () {
