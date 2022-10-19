@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.skripsi">
+    package="com.example.bintar">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="skripsi"
+        android:label="SMP BiNA TARUNA MEDAN"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

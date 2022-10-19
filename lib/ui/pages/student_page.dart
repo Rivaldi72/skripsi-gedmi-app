@@ -22,10 +22,15 @@ class StudentPage extends StatelessWidget {
       "action": "/informasi-page"
     },
     {
-      "image": "assets/images/kelas.png",
-      "title": "Siswa",
-      "action": "/kelas-page"
+      "image": "assets/images/guru.png",
+      "title": "Guru",
+      "action": "/detail-teacher-page"
     },
+    // {
+    //   "image": "assets/images/kelas.png",
+    //   "title": "Siswa",
+    //   "action": "/kelas-page"
+    // },
     {
       "image": "assets/images/mapel.png",
       "title": "MataPelajaran",
