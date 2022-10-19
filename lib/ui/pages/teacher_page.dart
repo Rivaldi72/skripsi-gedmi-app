@@ -1,10 +1,19 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skripsi/shared/theme.dart';
 
 import '../widget/custom_card_menu.dart';
 
-class TeacherPage extends StatelessWidget {
+class TeacherPage extends StatefulWidget {
   TeacherPage({Key? key}) : super(key: key);
+
+  @override
+  State<TeacherPage> createState() => _TeacherPageState();
+}
+
+class _TeacherPageState extends State<TeacherPage> {
   var menuTeacher = [
     {
       "image": "assets/images/profil.png",
@@ -42,6 +51,10 @@ class TeacherPage extends StatelessWidget {
       "action": "/jadwalmapel"
     },
   ];
+  logOut() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +92,6 @@ class TeacherPage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            ListTile(
-              title: const Text('Profil'),
-              onTap: () => Navigator.pushNamed(context, '/identitas-teacher'),
             ),
             GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/login'),

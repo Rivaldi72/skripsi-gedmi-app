@@ -29,21 +29,31 @@ class _LoginState extends State<Login> {
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body.toString());
       var role = data['role'] ?? '';
-
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      prefs.setInt('id', data['id'] ?? 0);
-      prefs.setString('username', data['username'] ?? '');
-      prefs.setString('role', data['role'] ?? '');
-      if (role == 'guru' || role == 'admin') {
-        Navigator.pushNamed(context, '/teacher-page');
-      } else if (role == 'siswa') {
-        Navigator.pushNamed(context, '/student-page');
-      } else {
+      var pesan = data['pesan'] ?? '';
+      print(pesan);
+      if (pesan != '') {
         final snackBar = SnackBar(
-          content: const Text(
-              'Kepala sekolah hanya bisa login melalui aplikasi WEB'),
+          content: Text(pesan.toString()),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      } else {
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setInt('id', data['id'] ?? 0);
+        prefs.setString('username', data['username'] ?? '');
+        prefs.setString('role', data['role'] ?? '');
+        prefs.setString('api_token', data['api_token'] ?? '');
+        prefs.setString('nis', data['biodata']['nis'] ?? '');
+        if (role == 'guru' || role == 'admin') {
+          Navigator.pushNamed(context, '/teacher-page');
+        } else if (role == 'siswa') {
+          Navigator.pushNamed(context, '/student-page');
+        } else {
+          final snackBar = SnackBar(
+            content: const Text(
+                'Kepala sekolah hanya bisa login melalui aplikasi WEB'),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        }
       }
     } else {
       throw Exception('Jaringan Bermasalah');

@@ -69,7 +69,7 @@ class _DetailTeacherState extends State<DetailTeacher> {
                           );
                         },
                         child: CardMenuGuru(
-                          image: 'assets/images/logo.png',
+                          image: 'assets/images/training.png',
                           title: menuGuru[index]['nama'] ?? 'Nama tidak ada',
                         ),
                       );

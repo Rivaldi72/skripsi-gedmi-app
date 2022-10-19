@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:skripsi/shared/theme.dart';
+import 'package:http/http.dart' as http;
 
 import '../widget/custom_card_menu.dart';
 
-class StudentPage extends StatelessWidget {
+class StudentPage extends StatefulWidget {
   StudentPage({Key? key}) : super(key: key);
+
+  @override
+  State<StudentPage> createState() => _StudentPageState();
+}
+
+class _StudentPageState extends State<StudentPage> {
   var menuStudent = [
     {
       "image": "assets/images/profil.png",
@@ -42,6 +50,34 @@ class StudentPage extends StatelessWidget {
       "action": "/jadwalmapel"
     },
   ];
+
+  logOut() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+  }
+
+  Future<void> getBiodataSiswa(context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final queryParam = {
+      'api_token': prefs.getString('api_token'),
+    };
+    final uri = Uri.https(
+        'www.ayo-wisuda.site', '/api/gedmi/get-biodata-siswa', queryParam);
+    final response = await http.post(uri);
+    print(response.body);
+    print(queryParam);
+    if (response.statusCode == 200) {
+      // var data = jsonDecode(response.body.toString());
+      Navigator.pushNamed(context, '/identitas-student');
+    } else {
+      throw Exception('Jaringan Bermasalah');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,10 +118,13 @@ class StudentPage extends StatelessWidget {
             ),
             ListTile(
               title: const Text('Profil'),
-              onTap: () => Navigator.pushNamed(context, '/identitas-student'),
+              onTap: () => getBiodataSiswa(context),
             ),
             GestureDetector(
-              onTap: () => Navigator.pushNamed(context, '/login'),
+              onTap: () {
+                logOut();
+                Navigator.pushNamed(context, '/login');
+              },
               child: Container(
                 width: 200,
                 height: 50,
