@@ -1,9 +1,54 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:skripsi/constant.dart';
 import 'package:skripsi/shared/theme.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+  Future<void> login(context) async {
+    print([usernameController.text, passwordController.text]);
+    final queryParam = {
+      'username': usernameController.text,
+      'password': passwordController.text,
+    };
+    print(queryParam);
+    final uri =
+        Uri.https('www.ayo-wisuda.site', '/api/gedmi/login', queryParam);
+    final response = await http.post(uri);
+    print(response.body);
+
+    if (response.statusCode == 200) {
+      var data = jsonDecode(response.body.toString());
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setInt('id', data['id'] ?? 0);
+      prefs.setString('username', data['username'] ?? 0);
+      prefs.setString('password', data['password'] ?? 0);
+      prefs.setString('role', data['role'] ?? 0);
+      Navigator.pushNamed(context, '/teacher-page');
+    } else {
+      throw Exception('Jaringan Bermasalah');
+    }
+  }
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
