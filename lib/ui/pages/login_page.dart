@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Text(
-          "Untuk Mendapatkan Username dan Password Silahkan Hubungi Pihak Sekolah",
+          "Untuk Mendapatkan Username dan Password Silahkan Hubungi Admin",
           style: TextStyle(
             fontSize: 15.0,
             color: Colors.white,
@@ -130,7 +130,7 @@ class _LoginState extends State<Login> {
   Widget _textField() {
     return Column(
       children: <Widget>[
-        Padding(padding: EdgeInsets.only(top: 12.0)),
+        Padding(padding: EdgeInsets.only(top: 50.0)),
         TextFormField(
           controller: usernameController,
           decoration: const InputDecoration(
