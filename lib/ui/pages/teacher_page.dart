@@ -91,7 +91,7 @@ class TeacherPage extends StatelessWidget {
                 height: 50,
                 margin: EdgeInsets.all(10),
                 child: Card(
-                  color: Colors.green,
+                  color: kPrimaryColor,
                   child: Row(
                     children: [
                       Padding(
@@ -106,7 +106,7 @@ class TeacherPage extends StatelessWidget {
                     ],
                   ),
                   elevation: 8,
-                  shadowColor: Colors.green,
+                  shadowColor: Colors.blue,
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.white)),

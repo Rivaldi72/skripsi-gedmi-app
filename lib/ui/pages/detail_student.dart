@@ -122,7 +122,7 @@ class _DetailStudentState extends State<DetailStudent> {
                           );
                         },
                         child: CardMenuSiswa(
-                          image: 'assets/images/siswi.png',
+                          image: 'assets/images/students.png',
                           title: menuSiswa[index]['nama'] ?? 'Nama tidak ada',
                           nis: menuSiswa[index]['nis'] ?? 'Nis tidak ada',
                         ),
