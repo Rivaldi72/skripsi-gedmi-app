@@ -130,7 +130,7 @@ class _StudentPageState extends State<StudentPage> {
                 height: 50,
                 margin: EdgeInsets.all(10),
                 child: Card(
-                  color: Colors.green,
+                  color: kPrimaryColor,
                   child: Row(
                     children: [
                       Padding(
@@ -145,7 +145,7 @@ class _StudentPageState extends State<StudentPage> {
                     ],
                   ),
                   elevation: 8,
-                  shadowColor: Colors.green,
+                  shadowColor: Colors.blue,
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(color: Colors.white)),
