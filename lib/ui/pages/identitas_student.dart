@@ -9,7 +9,6 @@ class IdentitasStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
         <String, dynamic>{}) as Map;
-    print(arguments);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPurpleColor,

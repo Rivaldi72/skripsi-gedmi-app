@@ -65,7 +65,6 @@ class _JadwalMapel7State extends State<JadwalMapel7> {
                           break;
                         default:
                       }
-                      print(jadwal[0]['hari']);
                       return RosterWidget(
                         marginTop: index == 0 ? 0 : 34,
                         header1: index != 0 ? '' : 'Jam',

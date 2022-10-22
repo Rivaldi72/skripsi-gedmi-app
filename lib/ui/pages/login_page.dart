@@ -39,7 +39,6 @@ class _LoginState extends State<Login> {
         prefs.setString('username', data['username'] ?? '');
         prefs.setString('role', data['role'] ?? '');
         prefs.setString('api_token', data['api_token'] ?? '');
-        print(data.containsKey('biodata'));
         if (data.containsKey('biodata')) {
           prefs.setString('nis', data['biodata']['nis'] ?? '');
           prefs.setString('nama', data['biodata']['nama'] ?? '');
