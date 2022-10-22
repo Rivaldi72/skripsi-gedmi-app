@@ -16,7 +16,7 @@ class MataPelajaran extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: SingleChildScrollView(
           child: DataTable(
-            columns: [
+            columns: const [
               DataColumn(
                   label: Text('ID',
                       style: TextStyle(
@@ -30,7 +30,7 @@ class MataPelajaran extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 14, fontWeight: FontWeight.bold))),
             ],
-            rows: [
+            rows: const [
               DataRow(cells: [
                 DataCell(Text('1')),
                 DataCell(Text('Agung Sihotong, S.Pd')),
