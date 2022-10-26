@@ -40,11 +40,11 @@ class _TeacherPageState extends State<TeacherPage> {
       "title": "Guru",
       "action": "/detail-teacher-page"
     },
-    {
-      "image": "assets/images/mapel.png",
-      "title": "MataPelajaran",
-      "action": "/mapel",
-    },
+    // {
+    //   "image": "assets/images/mapel.png",
+    //   "title": "MataPelajaran",
+    //   "action": "/mapel",
+    // },
     {
       "image": "assets/images/mapel.png",
       "title": "Jadwal MaPel",

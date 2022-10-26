@@ -98,7 +98,7 @@ class Visi extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 80),
+                          margin: EdgeInsets.only(top: 50),
                           width: MediaQuery.of(context).size.width - 50,
                           height: 50,
                           decoration: BoxDecoration(

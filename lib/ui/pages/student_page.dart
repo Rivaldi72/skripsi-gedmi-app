@@ -29,21 +29,21 @@ class _StudentPageState extends State<StudentPage> {
       "title": "Galeri",
       "action": "/informasi-page"
     },
-    {
-      "image": "assets/images/guru.png",
-      "title": "Guru",
-      "action": "/detail-teacher-page"
-    },
+    // {
+    //   "image": "assets/images/guru.png",
+    //   "title": "Guru",
+    //   "action": "/detail-teacher-page"
+    // },
     // {
     //   "image": "assets/images/kelas.png",
     //   "title": "Siswa",
     //   "action": "/kelas-page"
     // },
-    {
-      "image": "assets/images/mapel.png",
-      "title": "MataPelajaran",
-      "action": "/mapel"
-    },
+    // {
+    //   "image": "assets/images/mapel.png",
+    //   "title": "MataPelajaran",
+    //   "action": "/mapel"
+    // },
     {
       "image": "assets/images/mapel.png",
       "title": "Jadwal MaPel",
@@ -229,7 +229,7 @@ class _StudentPageState extends State<StudentPage> {
               ),
             ),
             ListTile(
-              title: const Text('Profil'),
+              title: const Text('Biodata Diri'),
               onTap: () {
                 Navigator.pushNamed(
                   context,

@@ -2,7 +2,7 @@
     package="com.example.bintar">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="SMP BiNA TARUNA MEDAN"
+        android:label="SMP BINA TARUNA MEDAN"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

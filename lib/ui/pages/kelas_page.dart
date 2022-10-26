@@ -32,7 +32,7 @@ class KelasPage extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 100),
                 width: double.infinity,
-                height: 632,
+                height: 500,
                 decoration: BoxDecoration(
                   color: kWhiteColor,
                   boxShadow: [

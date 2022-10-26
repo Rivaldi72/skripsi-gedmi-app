@@ -1,8 +1,29 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:skripsi/shared/theme.dart';
+import 'package:http/http.dart' as http;
 
-class JadwalMapel8 extends StatelessWidget {
+class JadwalMapel8 extends StatefulWidget {
   const JadwalMapel8({Key? key}) : super(key: key);
+
+  @override
+  State<JadwalMapel8> createState() => _JadwalMapel8State();
+}
+
+class _JadwalMapel8State extends State<JadwalMapel8> {
+  var jadwalMapel;
+  Future<void> ambilDataRoster() async {
+    final response = await http
+        .get(Uri.parse('https://ayo-wisuda.site/api/gedmi/mapel/VIII'));
+
+    if (response.statusCode == 200) {
+      jadwalMapel = jsonDecode(response.body.toString());
+      return jadwalMapel;
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,274 +33,68 @@ class JadwalMapel8 extends StatelessWidget {
         backgroundColor: kPurpleColor,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 50),
-        child: Column(
-          children: const [
-            RosterWidget8(
-              header1: 'Jam',
-              header2: 'B.Studi',
-              header3: 'Guru',
-              hari: 'Senin',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('Prakarya')),
-                    DataCell(CellWidget8('Novenna Nurmalasari, S.Kom')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('Prakarya')),
-                    DataCell(CellWidget8('Novenna Nurmalasari, S.Kom')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('IPS')),
-                    DataCell(CellWidget8('Dr. Mesran, M.Pdi')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:00 - 09:30')),
-                    DataCell(CellWidget8('IPS')),
-                    DataCell(CellWidget8('Dr. Mesran, M.Pdi')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:30 - 10:00')),
-                    DataCell(CellWidget8('IPA')),
-                    DataCell(CellWidget8('Intan Sari Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('10:00 - 10:30')),
-                    DataCell(CellWidget8('IPA')),
-                    DataCell(CellWidget8('Intan Sari Siregar, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-            RosterWidget8(
-              marginTop: 34,
-              hari: 'Selasa',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('PKN')),
-                    DataCell(CellWidget8('ZL. Purba, A.Md')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('PKN')),
-                    DataCell(CellWidget8('ZL. Purba, A.Md')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('Matematika')),
-                    DataCell(CellWidget8('Siti Agustina Julita, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:00 - 09:30')),
-                    DataCell(CellWidget8('Matematika')),
-                    DataCell(CellWidget8('Siti Agustina Julita, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:30 - 10:00')),
-                    DataCell(CellWidget8('B.Inggris')),
-                    DataCell(CellWidget8('Keti Suyati, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('10:00 - 10:30')),
-                    DataCell(CellWidget8('B.Inggris')),
-                    DataCell(CellWidget8('Keti Suyati, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-            RosterWidget8(
-              marginTop: 34,
-              hari: 'Rabu',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('SBK')),
-                    DataCell(CellWidget8('Jessica Yolanda, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('SBK')),
-                    DataCell(CellWidget8('Jessica Yolanda, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('IPS')),
-                    DataCell(CellWidget8('Dr. Mesran, M.Pdi')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:00 - 09:30')),
-                    DataCell(CellWidget8('B.Indonesia')),
-                    DataCell(CellWidget8('Diana Susanti Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:30 - 10:00')),
-                    DataCell(CellWidget8('B.Indonesia')),
-                    DataCell(CellWidget8('Diana Susanti Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('10:00 - 10:30')),
-                    DataCell(CellWidget8('B.Indonesia')),
-                    DataCell(CellWidget8('Diana Susanti Siregar, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-            RosterWidget8(
-              marginTop: 34,
-              hari: 'Kamis',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('Matematika')),
-                    DataCell(CellWidget8('Siti Agustina Julita, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('Matematika')),
-                    DataCell(CellWidget8('Siti Agustina Julita, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('Penjas')),
-                    DataCell(CellWidget8('Hengki S. Sianturi, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:00 - 09:30')),
-                    DataCell(CellWidget8('Penjas')),
-                    DataCell(CellWidget8('Hengki S. Sianturi, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:30 - 10:00')),
-                    DataCell(CellWidget8('IPA')),
-                    DataCell(CellWidget8('Intan Sari Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('10:00 - 10:30')),
-                    DataCell(CellWidget8('IPA')),
-                    DataCell(CellWidget8('Intan Sari Siregar, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-            RosterWidget8(
-              marginTop: 34,
-              hari: 'Jumat',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('Agama')),
-                    DataCell(CellWidget8('Gaya Baiduri, S.Pdi')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('Agama')),
-                    DataCell(CellWidget8('Gaya Baiduri, S.Pdi')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('B.Inggris')),
-                    DataCell(CellWidget8('Keti Suyati, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-            RosterWidget8(
-              marginTop: 34,
-              hari: 'Sabtu',
-              dataRows: [
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('07:30 - 08:00')),
-                    DataCell(CellWidget8('Pramuka')),
-                    DataCell(CellWidget8('Salamuddin')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:00 - 08:30')),
-                    DataCell(CellWidget8('Pramuka')),
-                    DataCell(CellWidget8('Salamuddin')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('08:30 - 09:00')),
-                    DataCell(CellWidget8('B.Indonesia')),
-                    DataCell(CellWidget8('Diana Susanti Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('09:30 - 10:00')),
-                    DataCell(CellWidget8('B.Indonesia')),
-                    DataCell(CellWidget8('Diana Susanti Siregar, S.Pd')),
-                  ],
-                ),
-                DataRow(
-                  cells: [
-                    DataCell(CellWidget8('10:00 - 10:30')),
-                    DataCell(CellWidget8('B.Inggris')),
-                    DataCell(CellWidget8('Keti Suyati, S.Pd')),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
+      body: Column(
+        children: [
+          FutureBuilder(
+            future: ambilDataRoster(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Expanded(
+                  child: ListView.builder(
+                    itemCount: jadwalMapel.length,
+                    itemBuilder: (context, index) {
+                      var jadwal;
+                      switch (index) {
+                        case 0:
+                          jadwal = jadwalMapel['Senin'];
+                          break;
+                        case 1:
+                          jadwal = jadwalMapel['Selasa'];
+                          break;
+                        case 2:
+                          jadwal = jadwalMapel['Rabu'];
+                          break;
+                        case 3:
+                          jadwal = jadwalMapel['Kamis'];
+                          break;
+                        case 4:
+                          jadwal = jadwalMapel['Jumat'];
+                          break;
+                        case 5:
+                          jadwal = jadwalMapel['Sabtu'];
+                          break;
+                        default:
+                      }
+                      return RosterWidget8(
+                        marginTop: index == 0 ? 0 : 34,
+                        header1: index != 0 ? '' : 'Jam',
+                        header2: index != 0 ? '' : 'B.Studi',
+                        header3: index != 0 ? '' : 'Guru',
+                        hari: jadwal[0]['hari'],
+                        dataRows: [
+                          for (var item in jadwal)
+                            DataRow(
+                              cells: [
+                                DataCell(CellWidget8(item['jam'])),
+                                DataCell(CellWidget8(item['bidang_studi'])),
+                                DataCell(CellWidget8(item['nama_guru'])),
+                              ],
+                            ),
+                        ],
+                      );
+                    },
+                  ),
+                );
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+          ),
+        ],
       ),
     );
   }
