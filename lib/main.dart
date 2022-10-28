@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:skripsi/ui/pages/detail_teacher.dart';
 import 'package:skripsi/ui/pages/informasi_page.dart';
@@ -30,7 +32,17 @@ import 'package:skripsi/ui/pages/mapel8.dart';
 import 'package:skripsi/ui/pages/mapel7.dart';
 import 'package:skripsi/ui/pages/mapel9.dart';
 
+class PostHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
+}
+
 void main() {
+  HttpOverrides.global = new PostHttpOverrides();
   runApp(const MyApp());
 }
 

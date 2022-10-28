@@ -24,6 +24,7 @@ class _LoginState extends State<Login> {
     final uri =
         Uri.https('www.ayo-wisuda.site', '/api/gedmi/login', queryParam);
     final response = await http.post(uri);
+    print(response.body);
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body.toString());
       var role = data['role'] ?? '';
