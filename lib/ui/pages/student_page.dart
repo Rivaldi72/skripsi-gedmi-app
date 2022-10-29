@@ -229,7 +229,7 @@ class _StudentPageState extends State<StudentPage> {
               ),
             ),
             ListTile(
-              title: const Text('Biodata Diri'),
+              title: const Text('Data Diri'),
               onTap: () {
                 Navigator.pushNamed(
                   context,

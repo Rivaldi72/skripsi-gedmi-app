@@ -32,7 +32,7 @@ class JadwalMapel extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 100),
                 width: double.infinity,
-                height: 500,
+                height: 550,
                 decoration: BoxDecoration(
                   color: kWhiteColor,
                   boxShadow: [
